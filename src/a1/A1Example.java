@@ -1,4 +1,4 @@
-package a1;
+ package a1;
 
 import java.util.Scanner;
 
@@ -14,7 +14,7 @@ public class A1Example {
 		// Set up scanner object to read space-separated values
 		// from console input
 		
-		Scanner scan = new Scanner(System.in);
+		// Scanner scan = new Scanner(System.in);
 
 		// Read in count of numbers to process
 		
