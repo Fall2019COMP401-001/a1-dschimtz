@@ -58,7 +58,7 @@ public class A1Novice {
 				total += itemsarray[i][0] * itemsarray[i][1];
 			}
 			
-			customerinfo[j][2] = Double.toString(total);
+			customerinfo[j][2] = String.format("%.2f",total);
 					
 			System.out.println(customerinfo[j][0] + " " + customerinfo[j][1] + " " + customerinfo[j][2]);
 			
