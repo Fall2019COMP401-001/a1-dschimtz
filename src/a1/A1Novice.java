@@ -60,7 +60,7 @@ public class A1Novice {
 			
 			customerinfo[j][2] = Double.toString(total);
 					
-			System.out.println(customerinfo[j][0] + customerinfo[j][1] + customerinfo[j][2]);
+			System.out.println(customerinfo[j][0] + " " + customerinfo[j][1] + " " + customerinfo[j][2]);
 			
 		}
 		
