@@ -83,7 +83,7 @@ public class A1Adept {
 		int idxLowestPaying = findMin(customerInfo);
 		
 		System.out.println("Biggest: " + customerInfo[idxHighestPaying][0] + " " + customerInfo[idxHighestPaying][1] + " (" + customerInfo[idxHighestPaying][2] + ")");
-		System.out.println("Lowest: " + customerInfo[idxLowestPaying][0] + " " + customerInfo[idxLowestPaying][1] + " (" + customerInfo[idxLowestPaying][2] + ")");
+		System.out.println("Smallest: " + customerInfo[idxLowestPaying][0] + " " + customerInfo[idxLowestPaying][1] + " (" + customerInfo[idxLowestPaying][2] + ")");
 		System.out.println("Average: " + String.format("%.2f",  Average));
 	}
 	/*
