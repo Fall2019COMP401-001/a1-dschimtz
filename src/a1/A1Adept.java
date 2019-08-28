@@ -120,8 +120,6 @@ public class A1Adept {
 			if (Array[i][2] > Array[currentHigh][2]) {
 				currentHigh = i;
 			}
-			System.out.println(Array[i][2]);
-			System.out.println(Array[currentHigh][2]);
 		}
 		return currentHigh;
 	}
