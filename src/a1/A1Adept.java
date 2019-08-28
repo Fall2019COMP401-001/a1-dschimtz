@@ -24,6 +24,7 @@ public class A1Adept {
 		
 		// Initialize customerInfo string array which will have the following columns: firstname, lastname, total spent
 		String[][] customerInfo = new String[numberOfCustomers][3];
+		double[][] prices = new double[numberOfCustomers][3];
 		
 		// Loop over the amount of customers
 		for (int i=0; i<numberOfCustomers; i++) {
@@ -71,6 +72,7 @@ public class A1Adept {
 			
 			// Load in the previously calculated amount payed by customer i
 			customerInfo[i][2] = String.format("%.2f",total);
+			prices[i][2] = total;
 			
 			
 			//System.out.println(customerInfo[i][2]);
@@ -79,10 +81,6 @@ public class A1Adept {
 		}			
 		scan.close();
 		
-		Double[][] prices = new Double[customerInfo.length][3];
-		for (int id=0; id<customerInfo.length; id++) {
-			prices[id][2] = Double.parseDouble(customerInfo[id][2]);
-		}
 		
 		double Average = findAvg(customerInfo);
 		
@@ -101,7 +99,7 @@ public class A1Adept {
 	 * 
 	 * Output: The Average
 	 */
-	static Double findAvg(String[][] Array) {
+	static double findAvg(String[][] Array) {
 		double total = 0;
 		for (int i=0; i<Array.length; i++) {
 			total = total + Double.parseDouble(Array[i][2]);
@@ -116,12 +114,14 @@ public class A1Adept {
 	 * 
 	 * Output: Index of highest paying customer
 	 */
-	static int findMax(Double[][] Array) {
+	static int findMax(double[][] Array) {
 		int currentHigh = 0;
 		for (int i=1; i<Array.length; i++) {
 			if (Array[i][2] > Array[currentHigh][2]) {
 				currentHigh = i;
 			}
+			System.out.println(Array[i][2]);
+			System.out.println(Array[currentHigh][2]);
 		}
 		return currentHigh;
 	}
@@ -133,7 +133,7 @@ public class A1Adept {
 	 * 
 	 * Output: Index of lowest paying customer
 	 */
-	static int findMin(Double[][] Array) {
+	static int findMin(double[][] Array) {
 		int currentLow = 0;
 		for (int i=1; i<Array.length; i++) {
 			if (Array[i][2] < Array[currentLow][2]) {
