@@ -71,20 +71,28 @@ public class A1Adept {
 			
 			// Load in the previously calculated amount payed by customer i
 			customerInfo[i][2] = String.format("%.2f",total);
+			
+			
 			//System.out.println(customerInfo[i][2]);
 			//System.out.println(customerInfo[i][0]);
 			//System.out.println(customerInfo[i][1]);
 		}			
 		scan.close();
 		
+		Double[][] prices = new Double[customerInfo.length][3];
+		for (int id=0; id<customerInfo.length; id++) {
+			prices[id][2] = Double.parseDouble(customerInfo[id][2]);
+		}
+		
 		double Average = findAvg(customerInfo);
 		
-		int idxHighestPaying = findMax(customerInfo);
-		int idxLowestPaying = findMin(customerInfo);
+		int idxHighestPaying = findMax(prices);
+		int idxLowestPaying = findMin(prices);
 		
 		System.out.println("Biggest: " + customerInfo[idxHighestPaying][0] + " " + customerInfo[idxHighestPaying][1] + " (" + customerInfo[idxHighestPaying][2] + ")");
 		System.out.println("Smallest: " + customerInfo[idxLowestPaying][0] + " " + customerInfo[idxLowestPaying][1] + " (" + customerInfo[idxLowestPaying][2] + ")");
 		System.out.println("Average: " + String.format("%.2f",  Average));
+		
 	}
 	/*
 	 * Function finds average of the third column of an array
@@ -108,10 +116,10 @@ public class A1Adept {
 	 * 
 	 * Output: Index of highest paying customer
 	 */
-	static int findMax(String[][] Array) {
+	static int findMax(Double[][] Array) {
 		int currentHigh = 0;
 		for (int i=1; i<Array.length; i++) {
-			if (Double.parseDouble(Array[i][2]) > Double.parseDouble(Array[currentHigh][2])) {
+			if (Array[i][2] > Array[currentHigh][2]) {
 				currentHigh = i;
 			}
 		}
@@ -125,10 +133,10 @@ public class A1Adept {
 	 * 
 	 * Output: Index of lowest paying customer
 	 */
-	static int findMin(String[][] Array) {
+	static int findMin(Double[][] Array) {
 		int currentLow = 0;
 		for (int i=1; i<Array.length; i++) {
-			if (Double.parseDouble(Array[i][2]) < Double.parseDouble(Array[currentLow][2])) {
+			if (Array[i][2] < Array[currentLow][2]) {
 				currentLow = i;
 			}
 		}
