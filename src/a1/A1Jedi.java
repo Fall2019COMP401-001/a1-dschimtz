@@ -33,6 +33,7 @@ public class A1Jedi {
 			customerName[i][1] = scan.next();
 			
 			int numberOfItemsBought = scan.nextInt();
+			int[] itemsBoughtTMP = new int[numberOfItems]; 
 			
 			for (int j=0; j<numberOfItemsBought; j++) {
 				int itemQuantity = scan.nextInt();
@@ -43,11 +44,13 @@ public class A1Jedi {
 				for (int k=0; k<numberOfItems; k++) {
 					if (itemName.equals(customerItemNameBought[k])) {
 						customerItemQuantBought[k] += itemQuantity;
-						numberOfCustomersBought[k] += 1;
+						itemsBoughtTMP[k] = 1;
 					}
 				}
-				
-				
+			}
+			
+			for (int j=0; j<itemsBoughtTMP.length; j++) {
+				numberOfCustomersBought[j] += itemsBoughtTMP[j];
 			}
 		}
 		
